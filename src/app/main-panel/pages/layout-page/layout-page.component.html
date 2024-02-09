@@ -1,0 +1,20 @@
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <button pButton icon="pi pi-align-justify" class="mr-2" (click)="sidebarVisible1 = true"></button>
+    <span class="font-bold">T A S K - O</span>
+  </div>
+  <div class="p-toolbar-group-end">
+    <div class="flex align-items-center gap-2">
+      <small>Gabby Zapata</small>
+      <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+  </div>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="sidebarVisible1" position="left" styleClass="w-15rem">
+  <p-menu [model]="items"></p-menu>
+</p-sidebar>
+
+
+
+<router-outlet></router-outlet>

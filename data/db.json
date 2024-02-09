@@ -1,0 +1,53 @@
+{
+  "executors": [
+    {
+      "id": 1,
+      "executor_name": "Gabby Z.",
+      "user_name": "gabbyz",
+      "email": "gabbyz@geco.com.ec",
+      "executor_state": "ACT"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "project_name": "Implementation new system",
+      "duration_months": 4,
+      "department": "Information Technology",
+      "percentage": 45,
+      "project_state": "ACT"
+    },
+    {
+      "id": 2,
+      "project_name": "Investing",
+      "duration_months": 4,
+      "department": "Finance",
+      "percentage": 25,
+      "project_state": "ACT"
+    },
+    {
+      "id": 3,
+      "project_name": "Try advance forx",
+      "duration_months": 4,
+      "department": "Operations",
+      "percentage": 50,
+      "project_state": "ACT"
+    },
+    {
+      "id": 4,
+      "project_name": "Adverticement",
+      "duration_months": 4,
+      "department": "Marketing",
+      "percentage": 60,
+      "project_state": "ACT"
+    },
+    {
+      "id": 5,
+      "project_name": "Sales 100% ",
+      "duration_months": 4,
+      "department": "Sales",
+      "percentage": 85,
+      "project_state": "ACT"
+    }
+  ]
+}

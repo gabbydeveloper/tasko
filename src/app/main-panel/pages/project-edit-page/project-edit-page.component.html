@@ -1,0 +1,52 @@
+<ng-template #divLoadingProject>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>
+
+<p-card *ngIf="project; else divLoadingProject"  header="Project" class="p-4">
+  <div class="grid">
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label for="project_name">Project name</label>
+        <input pInputText id="project_name" [value]="project.project_name | defaultPipe" />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label for="department">Department</label>
+        <input pInputText id="department" [value]="project.department | defaultPipe" />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label for="duration_months">Stimated time in months</label>
+        <input pInputText id="duration_months" [value]="project.duration_months | defaultNumberPipe:0" />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label for="percentage">Advance percentaje</label>
+        <input pInputText id="percentage" [value]="project.percentage | defaultNumberPipe:0" />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="flex flex-column gap-2">
+        <label for="percentage">State project</label>
+        <p-dropdown
+         [options]="stateProjectVar"
+         [(ngModel)]="selectedStateProject"
+         optionValue="code"
+         optionLabel="name"></p-dropdown>
+      </div>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <p-button label="Save" icon="pi pi-check"></p-button>
+    <p-button
+     label="Cancel"
+     icon="pi pi-times"
+     styleClass="p-button-secondary"
+     routerLink="/main-panel/project"
+     [style]="{ 'margin-left': '.5em' }"></p-button>
+  </ng-template>
+</p-card>
+

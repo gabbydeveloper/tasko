@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "Gabby Z.",
+      "email": "gabbyz@geco.com.ec"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "project_name": "Project 1",
+      "duration_months": 4,
+      "department": "Information Technology",
+      "percentage": 45
+    },
+    {
+      "id": 2,
+      "project_name": "Project 2",
+      "duration_months": 4,
+      "department": "Finance",
+      "percentage": 25
+    },
+    {
+      "id": 3,
+      "project_name": "Project 3",
+      "duration_months": 4,
+      "department": "Operations",
+      "percentage": 50
+    },
+    {
+      "id": 4,
+      "project_name": "Project 4",
+      "duration_months": 4,
+      "department": "Marketing",
+      "percentage": 60
+    },
+    {
+      "id": 5,
+      "project_name": "Project 5",
+      "duration_months": 4,
+      "department": "Sales",
+      "percentage": 85
+    }
+  ]
+}

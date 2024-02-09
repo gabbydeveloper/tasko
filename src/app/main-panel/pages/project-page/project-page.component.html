@@ -1,0 +1,45 @@
+<p-card header="Projects" class="p-4">
+
+  <p-toolbar>
+    <div class="card flex flex-wrap gap-3">
+      <p-button icon="pi pi-plus" (onClick)="newProject()"></p-button>
+      <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText [(ngModel)]="searchText" (keypress)="searchProject($event)" />
+      </span>
+    </div>
+  </p-toolbar>
+
+  <p-table
+     [value]="projects"
+     selectionMode="single"
+     [(selection)]="selectedProject"
+     dataKey="id"
+     [tableStyle]="{ 'min-width': '40rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Id.</th>
+              <th>Project Name</th>
+              <th>Department</th>
+              <th>Advance percentage</th>
+              <th>State</th>
+              <th style="width: 5rem"></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-project>
+          <tr [pSelectableRow]="project">
+              <td>{{ project.id }}</td>
+              <td>{{ project.project_name }}</td>
+              <td>{{ project.department }}</td>
+              <td>{{ project.percentage }}%</td>
+              <td>{{ project.project_state | projectState }}</td>
+              <td>
+                  <button
+                    type="button"
+                    pButton pRipple icon="pi pi-pencil"
+                    (click)="selectProject(project)"></button>
+              </td>
+          </tr>
+      </ng-template>
+  </p-table>
+</p-card>
