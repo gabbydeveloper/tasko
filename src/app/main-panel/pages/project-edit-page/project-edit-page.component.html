@@ -2,45 +2,71 @@
   <p-progressSpinner></p-progressSpinner>
 </ng-template>
 
-<p-card *ngIf="project; else divLoadingProject"  header="Project" class="p-4">
-  <div class="grid">
+<p-card *ngIf="currentProject; else divLoadingProject"  header="Project" class="p-4">
+  <p-toast></p-toast>
+  <form class="grid" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" formControlName="id">
     <div class="col-6">
       <div class="flex flex-column gap-2">
-        <label for="project_name">Project name</label>
-        <input pInputText id="project_name" [value]="project.project_name | defaultPipe" />
+        <label for="project_name">Project name*</label>
+        <input
+         pInputText
+         id="project_name"
+         formControlName="project_name"
+         required/>
       </div>
     </div>
     <div class="col-6">
       <div class="flex flex-column gap-2">
-        <label for="department">Department</label>
-        <input pInputText id="department" [value]="project.department | defaultPipe" />
+        <label for="id_department">Department* </label>
+        <p-dropdown
+         id="id_department"
+         [options]="departments"
+         formControlName="id_department"
+         placeholder="Select a department"
+         optionValue="id"
+         optionLabel="department_name"></p-dropdown>
       </div>
     </div>
     <div class="col-6">
       <div class="flex flex-column gap-2">
         <label for="duration_months">Stimated time in months</label>
-        <input pInputText id="duration_months" [value]="project.duration_months | defaultNumberPipe:0" />
+        <input
+         pInputText
+         id="duration_months"
+         formControlName="duration_months"
+         />
       </div>
     </div>
     <div class="col-6">
       <div class="flex flex-column gap-2">
         <label for="percentage">Advance percentaje</label>
-        <input pInputText id="percentage" [value]="project.percentage | defaultNumberPipe:0" />
+        <input
+         pInputText
+         id="percentage"
+         formControlName="percentage"
+         />
       </div>
     </div>
     <div class="col-6">
       <div class="flex flex-column gap-2">
-        <label for="percentage">State project</label>
+        <label for="project_state">State project*</label>
         <p-dropdown
-         [options]="stateProjectVar"
-         [(ngModel)]="selectedStateProject"
+         id="project_state"
+         [options]="stateProject"
+         formControlName="project_state"
+         placeholder="Select a state"
+         [required]="true"
          optionValue="code"
          optionLabel="name"></p-dropdown>
       </div>
     </div>
-  </div>
+  </form>
   <ng-template pTemplate="footer">
-    <p-button label="Save" icon="pi pi-check"></p-button>
+    <p-button
+     label="Save"
+     (onClick)="onSubmit()"
+     icon="pi pi-check"></p-button>
     <p-button
      label="Cancel"
      icon="pi pi-times"
@@ -49,4 +75,3 @@
      [style]="{ 'margin-left': '.5em' }"></p-button>
   </ng-template>
 </p-card>
-

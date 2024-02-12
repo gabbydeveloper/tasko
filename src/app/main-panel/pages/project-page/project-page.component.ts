@@ -2,13 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../interfaces/projects.interface';
 import { Router } from '@angular/router';
-import { InputTextModule } from 'primeng/inputtext';
 
 interface Column {
   field: string;
   header: string;
 }
-
 
 @Component({
   selector: 'app-project-page',
@@ -33,7 +31,7 @@ export class ProjectPageComponent implements OnInit {
       );
   }
 
-  /* Buscar proyecto por nombre */
+  /* Search project by name */
   searchProject(event: KeyboardEvent): void {
     if(event.key === 'Enter'){
       this.projectService.getProjects()
@@ -45,13 +43,14 @@ export class ProjectPageComponent implements OnInit {
     }
   }
 
-  /* Seleccionar proyecto para modificar */
+  /* Select project to update */
   selectProject(project: Project): void {
     this.router.navigate(['/main-panel/project-edit', project.id]);
   }
 
+  /* Create new project */
   newProject(): void {
-    this.router.navigate(['/main-panel/project-edit', '']);
+    this.router.navigate(['/main-panel/project-new']);
   }
 
 }

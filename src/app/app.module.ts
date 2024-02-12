@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from './shared/shared.module';
+import { ProjectStatePipePipe } from './project-state-pipe.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjectStatePipePipe
   ],
   imports: [
     BrowserModule,

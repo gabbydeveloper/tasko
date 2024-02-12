@@ -11,7 +11,7 @@ import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.com
 import { ExecutorEditPageComponent } from './pages/executor-edit-page/executor-edit-page.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectStatePipe } from './pipes/project-state.pipe';
 import { DefaultPipePipe } from './pipes/default-pipe.pipe';
 import { DefaultNumberPipePipe } from './pipes/default-number-pipe.pipe';
@@ -35,7 +35,8 @@ import { DefaultNumberPipePipe } from './pipes/default-number-pipe.pipe';
     CommonModule,
     MainPanelRoutingModule,
     FormsModule,
-    PrimeNgModule
+    PrimeNgModule,
+    ReactiveFormsModule
   ]
 })
 export class MainPanelModule { }

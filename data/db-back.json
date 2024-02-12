@@ -1,46 +1,76 @@
 {
-  "users": [
+  "executors": [
     {
       "id": 1,
-      "user": "Gabby Z.",
-      "email": "gabbyz@geco.com.ec"
+      "executor_name": "Gabby Z.",
+      "user_name": "gabbyz",
+      "password": "123456",
+      "email": "gabbyz@geco.com.ec",
+      "executor_state": "ACT"
+    }
+  ],
+  "departments":[
+    {
+      "id": 1,
+      "department_name": "Information Technology"
+    },
+    {
+      "id": 2,
+      "department_name": "Operations"
+    },
+    {
+      "id": 3,
+      "department_name": "Marketing"
+    },
+    {
+      "id": 4,
+      "department_name": "Finance"
+    },
+    {
+      "id": 5,
+      "department_name": "Sales"
     }
   ],
   "projects": [
     {
       "id": 1,
-      "project_name": "Project 1",
+      "id_department": 1,
+      "project_name": "Implementation new system",
       "duration_months": 4,
-      "department": "Information Technology",
-      "percentage": 45
+      "percentage": 45,
+      "project_state": "ACT"
     },
     {
       "id": 2,
-      "project_name": "Project 2",
+      "id_department": 4,
+      "project_name": "Investing",
       "duration_months": 4,
-      "department": "Finance",
-      "percentage": 25
+      "percentage": 25,
+      "project_state": "ACT"
     },
     {
       "id": 3,
-      "project_name": "Project 3",
+      "id_department": 2,
+      "project_name": "Try advance forx",
       "duration_months": 4,
-      "department": "Operations",
-      "percentage": 50
+      "percentage": 50,
+      "project_state": "ACT"
     },
     {
       "id": 4,
-      "project_name": "Project 4",
+      "id_department": 3,
+      "project_name": "Adverticement",
       "duration_months": 4,
-      "department": "Marketing",
-      "percentage": 60
+      "percentage": 60,
+      "project_state": "ACT"
     },
     {
       "id": 5,
-      "project_name": "Project 5",
+      "id_department": 5,
+      "project_name": "Sales 100% ",
       "duration_months": 4,
-      "department": "Sales",
-      "percentage": 85
+      "percentage": 85,
+      "project_state": "ACT"
     }
   ]
 }

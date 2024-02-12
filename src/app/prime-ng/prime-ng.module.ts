@@ -11,7 +11,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { TableModule } from 'primeng/table';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   exports: [
@@ -25,7 +25,8 @@ import { DropdownModule } from 'primeng/dropdown';
     AvatarModule,
     TableModule,
     ProgressSpinnerModule,
-    DropdownModule
+    DropdownModule,
+    ToastModule
   ]
 })
 export class PrimeNgModule { }

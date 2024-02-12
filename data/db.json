@@ -1,53 +1,90 @@
 {
   "executors": [
     {
-      "id": 1,
+      "id": "1",
       "executor_name": "Gabby Z.",
       "user_name": "gabbyz",
+      "password": "123456",
       "email": "gabbyz@geco.com.ec",
       "executor_state": "ACT"
     }
   ],
+  "departments": [
+    {
+      "id": "1",
+      "department_name": "Information Technology"
+    },
+    {
+      "id": "2",
+      "department_name": "Operations"
+    },
+    {
+      "id": "3",
+      "department_name": "Marketing"
+    },
+    {
+      "id": "4",
+      "department_name": "Finance"
+    },
+    {
+      "id": "5",
+      "department_name": "Sales"
+    }
+  ],
   "projects": [
     {
-      "id": 1,
+      "id": "1",
+      "id_department": "1",
       "project_name": "Implementation new system",
-      "duration_months": 4,
-      "department": "Information Technology",
-      "percentage": 45,
-      "project_state": "ACT"
+      "duration_months": "6",
+      "percentage": "40",
+      "project_state": "ACT",
+      "xxx_department": "Information Technology"
     },
     {
-      "id": 2,
+      "id": "2",
+      "id_department": "4",
       "project_name": "Investing",
       "duration_months": 4,
-      "department": "Finance",
-      "percentage": 25,
-      "project_state": "ACT"
+      "percentage": "20",
+      "project_state": "ACT",
+      "xxx_department": "Finance"
     },
     {
-      "id": 3,
+      "id": "3",
+      "id_department": "2",
       "project_name": "Try advance forx",
       "duration_months": 4,
-      "department": "Operations",
-      "percentage": 50,
-      "project_state": "ACT"
+      "percentage": "50",
+      "project_state": "ACT",
+      "xxx_department": "Operations"
     },
     {
-      "id": 4,
+      "id": "4",
+      "id_department": "3",
       "project_name": "Adverticement",
       "duration_months": 4,
-      "department": "Marketing",
-      "percentage": 60,
-      "project_state": "ACT"
+      "percentage": "40",
+      "project_state": "ACT",
+      "xxx_department": "Marketing"
     },
     {
-      "id": 5,
-      "project_name": "Sales 100% ",
+      "id": "5",
+      "id_department": "5",
+      "project_name": "Sales all the stock",
       "duration_months": 4,
-      "department": "Sales",
-      "percentage": 85,
-      "project_state": "ACT"
+      "percentage": "70",
+      "project_state": "ACT",
+      "xxx_department": "Sales"
+    },
+    {
+      "id": "6",
+      "id_department": "2",
+      "project_name": "Automatize bank load",
+      "duration_months": "6",
+      "percentage": "10",
+      "project_state": "ACT",
+      "xxx_department": "Operations"
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'projectState'
+  name: 'projectStatePipe'
 })
 export class ProjectStatePipe implements PipeTransform {
 
@@ -15,5 +15,4 @@ export class ProjectStatePipe implements PipeTransform {
         return 'Unknown';
     }
   }
-
 }

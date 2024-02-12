@@ -19,6 +19,7 @@ const routes: Routes = [
       { path: 'project', component: ProjectPageComponent },
       { path: 'task', component: TaskPageComponent },
       { path: 'executor', component: ExecutorPageComponent },
+      { path: 'project-new', component: ProjectEditPageComponent },
       { path: 'project-edit/:id', component: ProjectEditPageComponent },
       { path: 'task-edit/:id', component: TaskEditPageComponent},
       { path: 'executor-edit/:id', component: ExecutorEditPageComponent },
