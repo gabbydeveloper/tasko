@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
+import { AuthService } from '../../../auth/services/auth.service';
+import { User } from '../../../auth/interfaces/user.interface';
+
 @Component({
   selector: 'app-layout-page',
   templateUrl: './layout-page.component.html',
@@ -10,11 +13,11 @@ import { MenuItem } from 'primeng/api';
 export class LayoutPageComponent implements OnInit {
 
   public items: MenuItem[] = [];
-
   public sidebarVisible1: boolean = false;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
 
@@ -76,7 +79,12 @@ export class LayoutPageComponent implements OnInit {
 
   }
 
+  get user(): User | undefined {
+    return this.authService.currentUser;
+  }
+
   onLogout():void{
+    this.authService.logout();
     this.router.navigate(['/auth/login']);
   }
 

@@ -1,14 +1,28 @@
-<p-card header="Login" class="card flex justify-content-center p-8">
-    <span class="p-float-label">
-      <input pInputText id="username" />
-      <label for="username">User</label>
-    </span>
-  <br>
-    <span class="p-float-label">
-      <input pInputText id="password" />
-      <label for="password">Password</label>
-    </span>
-  <br>
-    <p-button label="Login" icon="pi pi-sign-in" (onClick)="onLogin()"></p-button>
-
-</p-card>
+<div class="flex align-items-center justify-content-center" style="height: 100vh; background-color: #5d9dc2;">
+  <p-card header="Login">
+    <p-toast></p-toast>
+    <form [formGroup]="myForm" (ngSubmit)="onLogin()">
+      <div class="flex flex-column gap-2 pt-4 pr-4 pl-4">
+        <label for="user">User</label>
+        <input
+         id="user"
+         pInputText
+         [ngClass]="{'ng-invalid ng-dirty': isValidField('user')}"
+         formControlName="user" />
+      </div>
+      <div class="mt-4"></div>
+      <div class="flex flex-column gap-2 pr-4 pl-4">
+        <label for="password">Password</label>
+        <p-password
+         id="password"
+         [feedback]="false"
+         [ngClass]="{'ng-invalid ng-dirty': isValidField('password')}"
+         formControlName="password" />
+      </div>
+      <br>
+      <div class="flex justify-content-center mt-4">
+        <p-button label="Login" type="submit" icon="pi pi-sign-in"></p-button>
+      </div>
+    </form>
+  </p-card>
+</div>

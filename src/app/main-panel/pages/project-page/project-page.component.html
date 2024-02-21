@@ -14,7 +14,7 @@
      [value]="projects"
      selectionMode="single"
      [(selection)]="selectedProject"
-     dataKey="id"
+     dataKey="id_project"
      [tableStyle]="{ 'min-width': '40rem' }">
       <ng-template pTemplate="header">
           <tr>
@@ -28,11 +28,11 @@
       </ng-template>
       <ng-template pTemplate="body" let-project>
           <tr [pSelectableRow]="project">
-              <td>{{ project.id }}</td>
-              <td>{{ project.project_name }}</td>
+              <td>{{ project.id_project }}</td>
+              <td>{{ project.name_project }}</td>
               <td>{{ project.xxx_department }}</td>
-              <td>{{ project.percentage }}%</td>
-              <td>{{ project.project_state | projectStatePipe }}</td>
+              <td>{{ project.xxx_percentage }}%</td>
+              <td>{{ project.state_project | projectStatePipe }}</td>
               <td>
                   <button
                     type="button"

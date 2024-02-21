@@ -5,14 +5,14 @@
 <p-card *ngIf="currentProject; else divLoadingProject"  header="Project" class="p-4">
   <p-toast></p-toast>
   <form class="grid" [formGroup]="projectForm" (ngSubmit)="onSubmit()">
-    <input type="hidden" formControlName="id">
     <div class="col-6">
+      <input type="hidden" formControlName="id_project">
       <div class="flex flex-column gap-2">
-        <label for="project_name">Project name*</label>
+        <label for="name_project">Project name*</label>
         <input
          pInputText
-         id="project_name"
-         formControlName="project_name"
+         id="name_project"
+         formControlName="name_project"
          required/>
       </div>
     </div>
@@ -25,7 +25,7 @@
          formControlName="id_department"
          placeholder="Select a department"
          optionValue="id"
-         optionLabel="department_name"></p-dropdown>
+         optionLabel="name_department"></p-dropdown>
       </div>
     </div>
     <div class="col-6">
@@ -40,21 +40,11 @@
     </div>
     <div class="col-6">
       <div class="flex flex-column gap-2">
-        <label for="percentage">Advance percentaje</label>
-        <input
-         pInputText
-         id="percentage"
-         formControlName="percentage"
-         />
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="flex flex-column gap-2">
-        <label for="project_state">State project*</label>
+        <label for="state_project">State project*</label>
         <p-dropdown
-         id="project_state"
+         id="state_project"
          [options]="stateProject"
-         formControlName="project_state"
+         formControlName="state_project"
          placeholder="Select a state"
          [required]="true"
          optionValue="code"

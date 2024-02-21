@@ -27,8 +27,7 @@ export class ProjectPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectService.getProjects()
-        .subscribe(data => this.projects = data
-      );
+        .subscribe(data => this.projects = data);
   }
 
   /* Search project by name */
@@ -37,7 +36,7 @@ export class ProjectPageComponent implements OnInit {
       this.projectService.getProjects()
         .subscribe(data => {
           const regex = new RegExp(this.searchText,'i');
-          this.projects = data.filter(element => regex.test(element.project_name));
+          this.projects = data.filter(element => regex.test(element.name_project));
         }
       );
     }
@@ -45,7 +44,7 @@ export class ProjectPageComponent implements OnInit {
 
   /* Select project to update */
   selectProject(project: Project): void {
-    this.router.navigate(['/main-panel/project-edit', project.id]);
+    this.router.navigate(['/main-panel/project-edit', project.id_project]);
   }
 
   /* Create new project */

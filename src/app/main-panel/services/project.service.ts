@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, of } from 'rxjs';
 import { Project } from '../interfaces/projects.interface';
@@ -12,27 +12,47 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
+  createCredentials(): HttpHeaders {
+
+    const username:string = 'usertest';
+    const password:string = '123456';
+
+    const base64Credentials = btoa(`${username}:${password}`);
+    // Crear el encabezado de autorización
+    const headers = new HttpHeaders({
+      'Authorization': `Basic ${base64Credentials}`
+    });
+    return headers;
+  }
+
+
   getProjects():Observable<Project[]>{
-    return this.http.get<Project[]>(`${ this.baseUrl }/projects`);
+    const headers = this.createCredentials();
+    return this.http.get<Project[]>(`${ this.baseUrl }/projects`, {headers: headers});
   }
 
   getProjectById(id: number): Observable<Project | undefined> {
-    return this.http.get<Project>(`${ this.baseUrl }/projects/${ id }`)
+    const headers = this.createCredentials();
+    return this.http.get<Project>(`${ this.baseUrl }/projects/${ id }`, {headers: headers})
            .pipe(catchError(error => of(undefined)));
   }
 
   getDepartments():Observable<Department[]>{
-    return this.http.get<Department[]>(`${ this.baseUrl }/departments`);
+    const headers = this.createCredentials();
+    return this.http.get<Department[]>(`${ this.baseUrl }/departments`, {headers: headers});
   }
 
   addProject(project: Project): Observable<Project>{
-    return this.http.post<Project>(`${ this.baseUrl }/projects`, project);
+    const headers = this.createCredentials();
+    return this.http.post<Project>(`${ this.baseUrl }/projects`, project, {headers: headers});
   }
 
   updateProject(project: Project): Observable<Project>{
-    if(!project.id) throw Error('Project id is required');
+    const headers = this.createCredentials();
 
-    return this.http.patch<Project>(`${ this.baseUrl }/projects/${ project.id }`, project);
+    if(!project.id_project) throw Error('Project id is required');
+
+    return this.http.patch<Project>(`${ this.baseUrl }/projects/${ project.id_project }`, project);
   }
 
 

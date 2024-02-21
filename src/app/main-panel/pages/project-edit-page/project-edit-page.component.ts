@@ -20,13 +20,11 @@ export class ProjectEditPageComponent implements OnInit {
   public departments: Department[] | undefined;
 
   public projectForm = new FormGroup({
-    id:             new FormControl(7),
+    id_project:     new FormControl(0),
     id_department:  new FormControl(0),
-    project_name:   new FormControl(''),
+    name_project:   new FormControl(''),
     duration_months:new FormControl(0),
-    percentage:     new FormControl(0),
-    project_state:  new FormControl('ACT'),
-    xxx_department: new FormControl('')
+    state_project:  new FormControl('ACT')
   });
 
   constructor(
@@ -79,18 +77,11 @@ export class ProjectEditPageComponent implements OnInit {
   public onSubmit():void {
     if(this.projectForm.invalid) return;
 
-    if(this.currentProject.id > 0){
-      this.projectService.updateProject(this.currentProject)
-          .subscribe(result => {
-            this.showToast('Data successfuly updated!');
-          });
-    }
-    else{
-      this.projectService.addProject(this.currentProject)
-          .subscribe(result => {
-            this.showToast('Data successfuly inserted!');
-          });
-    }
+    this.projectService.addProject(this.currentProject)
+        .subscribe(result => {
+          this.projectForm.reset(result);
+          this.showToast('Data successfuly inserted!');
+        });
   }
 
   public showToast(message: string):void {

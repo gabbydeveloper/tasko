@@ -5,7 +5,7 @@
   </div>
   <div class="p-toolbar-group-end">
     <div class="flex align-items-center gap-2">
-      <small>Gabby Zapata</small>
+      <small>{{ user?.name_user }}</small>
       <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
   </div>
   </div>
@@ -14,7 +14,5 @@
 <p-sidebar [(visible)]="sidebarVisible1" position="left" styleClass="w-15rem">
   <p-menu [model]="items"></p-menu>
 </p-sidebar>
-
-
 
 <router-outlet></router-outlet>

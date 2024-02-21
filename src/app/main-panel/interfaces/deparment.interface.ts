@@ -1,6 +1,6 @@
 
 
 export interface Department {
-  id:               number;
-  department_name:  string;
+  id_department:               number;
+  name_department:  string;
 }

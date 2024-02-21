@@ -30,8 +30,8 @@ export class DashboardPageComponent implements OnInit {
 
         for(let i=0;i<projects.length;i++)
         {
-          labelsProject[i] = projects[i].project_name;
-          advanceProject[i] = projects[i].percentage;
+          labelsProject[i] = projects[i].name_project;
+          advanceProject[i] = projects[i].xxx_percentage;
         }
 
         this.data = {
