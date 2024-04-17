@@ -5,6 +5,7 @@ import { Error404PageComponent } from './shared/pages/error404-page/error404-pag
 import { canActivateGuard, canMatchGuard } from './auth/guards/auth.guard';
 import { publicCanActivateGuard, publicCanMatchGuard } from './auth/guards/public.guard';
 
+//Configuración principal de las rutas de la aplicación
 const routes: Routes = [
   {
     path: 'auth',
