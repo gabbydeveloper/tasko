@@ -8,12 +8,13 @@ import { User } from '../../../auth/interfaces/user.interface';
 @Component({
   selector: 'app-layout-page',
   templateUrl: './layout-page.component.html',
-  styles: ``
+  styleUrl: './layout-page.component.css'
 })
 export class LayoutPageComponent implements OnInit {
 
   public items: MenuItem[] = [];
   public sidebarVisible1: boolean = false;
+  public collapsed: boolean = false;
 
   constructor(
     private router: Router,

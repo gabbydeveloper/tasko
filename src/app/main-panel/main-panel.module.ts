@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectStatePipe } from './pipes/project-state.pipe';
 import { DefaultPipePipe } from './pipes/default-pipe.pipe';
 import { DefaultNumberPipePipe } from './pipes/default-number-pipe.pipe';
+import { TestPageComponent } from './pages/test-page/test-page.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DefaultNumberPipePipe } from './pipes/default-number-pipe.pipe';
     LayoutPageComponent,
     ProjectStatePipe,
     DefaultPipePipe,
-    DefaultNumberPipePipe
+    DefaultNumberPipePipe,
+    TestPageComponent
   ],
   imports: [
     CommonModule,

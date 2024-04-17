@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.css',
   providers: [MessageService]
 })
 export class LoginPageComponent {

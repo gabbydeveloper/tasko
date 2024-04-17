@@ -1,3 +1,9 @@
+
+
+<p-sidebar [(visible)]="sidebarVisible1" position="left" styleClass="w-15rem">
+  <p-menu [model]="items"></p-menu>
+</p-sidebar>
+
 <p-toolbar>
   <div class="p-toolbar-group-start">
     <button pButton icon="pi pi-align-justify" class="mr-2" (click)="sidebarVisible1 = true"></button>
@@ -11,8 +17,31 @@
   </div>
 </p-toolbar>
 
-<p-sidebar [(visible)]="sidebarVisible1" position="left" styleClass="w-15rem">
-  <p-menu [model]="items"></p-menu>
-</p-sidebar>
-
 <router-outlet></router-outlet>
+
+
+<!--
+<div class="flex">
+  <div class="flex-none flex bg-primary mr-2 w-15rem">
+    <p-menu [model]="items"></p-menu>
+  </div>
+  <div class="flex-grow-1 bg-primary max-w-full">
+
+    <p-toolbar>
+      <div class="p-toolbar-group-start">
+        <button pButton icon="pi pi-align-justify" class="mr-2" (click)="sidebarVisible1 = true"></button>
+        <span class="font-bold">T A S K - O</span>
+      </div>
+      <div class="p-toolbar-group-end">
+        <div class="flex align-items-center gap-2">
+          <small>{{ user?.name_user }}</small>
+          <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+      </div>
+      </div>
+    </p-toolbar>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+ -->
